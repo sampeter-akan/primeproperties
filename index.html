@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Prime Properties</title>
+<link href="prime.css" rel="stylesheet">
+<script src="jquery-1.11.3.min.js"></script>
+<script src = "focusblur.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<script src="WDC.js"></script>
+<script src='OSC.js'></script>
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+</head>
+<body>
+<div id="wrapper">
+ <header><h1>Prime Properties</h1></header>
+<nav>
+ <ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="listings.html">Listings</a></li>
+<li><a href="financing.html">Financing</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li><a href="services.html">Services</a></li>
+</ul>
+</nav>
+
+<main>
+<p class id="floatright">
+<video controls="controls" poster="primeposter.jpg"
+      width="213" height="163">
+	 <source src="prime.m4v" type="video/mp4"> 
+	 <source src="prime.ogv" type="video/ogg">
+      <embed type="application/x-shockwave-flash" 
+       src="prime.swf" 
+       width="213" height="163" 
+       title="Prime Properties">
+</video>
+<p>Prime Properties is prepared to market and sell your properties.</p><br>
+<p>The philosophy of Prime Properties is to promote our clients, not ourselves</p><br>
+<p>We can also help you find the property that meets your needs.</p>
+
+<ul>
+    <li>location</li>
+	<li>price</li>
+	<li>features</li>
+ </ul>
+ 
+<h2>Podcast Episode #1,247</h2>
+<p class="contact">
+
+  <audio controls="controls">
+  <source src="primepodcast.mp3" type="audio/mpeg">
+  <source src="primepodcast.ogg" type="audio/ogg">
+  <a href="primepodcast.txt">Download the Podcast</a> (MP3)
+</audio>
+</p><br>
+ 
+  <div>
+	Prime Properties<br>
+    3055 Bode Road<br>
+    Mountain Home, CA 93923<br><br>
+    <a id="mobile" href="tel:888-555-5555">1-888-555-5555</a>
+	<span id="desktop">888-555-5555</span>
+</div>
+  </head>
+  <body>
+  <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <div id='status'></div>
+    <div id='map'></div>
+ 
+    <script>
+      if (typeof navigator.geolocation == 'undefined')
+         alert("Geolocation not supported.")
+      else
+        navigator.geolocation.getCurrentPosition(granted, denied)
+
+      function granted(position)
+      {
+        // Uncomment below to popup the location
+        //     alert("You are at location:\n"
+        //       + position.coords.latitude + ", "
+        //       + position.coords.longitude)
+	  
+        O('status').innerHTML = 'Permission Granted'
+        S('map').border       = '1px solid black'
+        S('map').width        = '640px'
+        S('map').height       = '320px'
+
+        var lat   = position.coords.latitude
+        var long  = position.coords.longitude
+        var gmap  = O('map')
+        var gopts =
+        {
+          center: new google.maps.LatLng(lat, long),
+          zoom: 9, mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var map = new google.maps.Map(gmap, gopts)
+      }
+
+      function denied(error)
+      {
+        var message
+
+        switch(error.code)
+        {
+          case 1: message = 'Permission Denied'; break;
+          case 2: message = 'Position Unavailable'; break;
+          case 3: message = 'Operation Timed Out'; break;
+          case 4: message = 'Unknown Error'; break;
+        }
+
+        // Uncomment below to popup the message
+        //   alert("Error with Geolocation: " + message)
+
+        O('status').innerHTML = message
+      }
+    </script>
+
+</main>
+<p>Copyright &copy; primeproperties.com 
+<script> 
+var lastMod = new Date(document.lastModified);
+document.write((lastMod.getMonth() + 1) + "-" + lastMod.getFullYear());
+</script> 
+<noscript> 
+10-11-2015
+</noscript> 
+</p>
+</footer>
+</div> <!-- end of wrapper -->
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
